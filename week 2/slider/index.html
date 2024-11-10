@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper and Image Slider Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Swiper styling */
+    .swiper {
+      margin-top: 20px;
+      width: 320px;
+      height: 240px;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Custom image slider styling */
+    .slider {
+      position: relative;
+      width: 400px;
+      height: 250px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .slider img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .active {
+      background-color: #717171;
+    }
+  </style>
+    
+</head>
+<body>
+
+  <!-- Swiper Slider Component -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="1.jpeg" alt="Image 1"></div>
+      <div class="swiper-slide"><img src="2.jpeg" alt="Image 2"></div>
+      <div class="swiper-slide"><img src="3.jpeg" alt="Image 3"></div>
+    </div>
+  </div>
+
+  <!-- Custom Image Slider with Dots -->
+  <div class="slider">
+    <img src="1.jpeg" alt="Custom Image 1">
+    <img src="2.jpeg" alt="Custom Image 2">
+    <img src="3.jpeg" alt="Custom Image 3">
+  </div>
+  <div class="dots">
+    <span class="dot" onclick="changeimage(0)"></span>
+    <span class="dot" onclick="changeimage(1)"></span>
+    <span class="dot" onclick="changeimage(2)"></span>
+  </div>
+
+  <!-- Swiper JS and Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="slideshow.js"></script>
+  <iframe src="slider.html" width="100%" height="600px"></iframe>
+</body>
+</html>
